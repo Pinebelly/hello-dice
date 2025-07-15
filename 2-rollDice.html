@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var a2History=[];
+var a4History=[];
+var a6History=[];
+var a8History=[];
+var a12History=[];
+var a20History=[];
+var a100History=[];
+const HISTORY_LIMIT = 18;
+const HISTORY_LIMIT100 = 18;
+</script>
+
+<style>
+	body{
+		background-color: grey;
+	}
+	p{
+		display: flex;
+		justify-content: center;
+	}
+	div{
+		display: flex;
+		justify-content: center;
+
+	}
+  button{
+		display: flex;
+		justify-content: center;
+		width: 225px;
+		height: 225px;
+	}
+	img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+</style>
+
+<title>Hello Dice</title>
+</head>
+
+<body>
+<p style="font-size: 500%">Hello Dice!</p>  
+
+<hr>
+
+<!-- DICE 2 -->
+<script>
+function d2(){
+	var hist2 = document.getElementById("hist2");
+	var dice2 = document.getElementById("dice2");
+	var descriptor = document.getElementById("descriptor");
+	var describe = " ";
+	
+	var diceRoll = 0;
+	var result = " ";
+
+if(a2History.length > HISTORY_LIMIT){
+		a2History.pop();
+	}	
+	hist2.innerHTML = a2History.slice(0,a2History.length);
+
+diceRoll=Math.floor(Math.random()*2);
+
+	
+	if(diceRoll == 1){ 
+	 result = "H";
+	 describe ="eads";
+	}
+	if(diceRoll == 0){ 
+	  result = "T";
+	  describe ="ails";
+	 }
+	 
+	a2History.unshift(" "+ result);
+	
+	dice2.innerHTML = result;
+	
+}//endfun
+</script>
+
+
+<!--
+<div style="font-size: 500%" id="count" ><div>Coin Flip</div></div>
+
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #7A7639; color: lightgrey; font-size: 1000%;border:solid lightgrey 10px" 
+	type="button" onclick="d2()">
+<div id="dice2"></div> 
+<span style="font-size: 50%" id="descriptor"></span>
+</button>
+<img src="coinflip.svg" width="300" height="300" style="padding-left: 50px" onclick="d2()">
+</div>
+
+<div style="font-size: 400% ">
+[
+<div id="hist2"></div> 
+]
+</div> 
+-->
+
+<div style="font-size: 200%">
+Coinflip: H=Heads & T=Tails
+</div>
+
+<input type="image" src="coinflip.svg" width="300" height="300" 
+		onclick="d2()">
+
+<div style="font-size: 500%">
+[<div id="dice2"></div>]&nbsp
+<div id="hist2"></div> 
+</div> 
+<hr>
+
+<!-- DICE 4 -->
+<script>
+function d4(){
+	var hist4 = document.getElementById("hist4");
+	var dice4 = document.getElementById("dice4");
+	var diceRoll = 0;
+	
+	if(a4History.length > HISTORY_LIMIT){
+		a4History.pop();
+	}	
+	hist4.innerHTML = a4History.slice(0,a4History.length);
+
+	diceRoll=Math.floor(Math.random()*4)+1;
+	a4History.unshift(" "+diceRoll.toString());
+	dice4.innerHTML = diceRoll.toString();
+	
+	//console.log(a4History);
+}//endfun
+</script>
+<!--
+<div style="font-size: 500%"id="count" ><div>4-Sided</div></div> 
+
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #7F490E; color: lightgrey; font-size: 1000%;border:solid lightgrey 10px" 
+	type="button" onclick="d4()">
+<div id="dice4"></div> 
+</button>
+
+<img src="D4dice.svg" width="300" height="300" style="padding-left: 50px" onclick="d4()">
+</div>
+
+<div style="font-size: 400%">
+[
+<div id="hist4"></div> 
+]
+</div> 
+-->
+<div style="font-size: 200%">
+Four Sided Dice
+</div>
+
+<input type="image" src="D4dice.svg" width="300" height="300" 
+	onclick="d4()">
+
+<div style="font-size: 500%">
+[<div id="dice4"></div>]&nbsp
+<div id="hist4"></div> 
+</div> 
+<hr>
+
+<!-- DICE 6 -->
+<script>
+function d6(){
+	var hist6 = document.getElementById("hist6");
+	var dice6 = document.getElementById("dice6");
+	var diceRoll = 0;
+	
+	if(a6History.length > HISTORY_LIMIT){
+		a6History.pop();
+	}	
+	hist6.innerHTML = a6History.slice(0,a6History.length);
+
+	diceRoll=Math.floor(Math.random()*6)+1;
+	a6History.unshift(" "+diceRoll.toString());
+	dice6.innerHTML = diceRoll.toString();
+	
+	//console.log(a6History);
+}//endfun
+</script>
+<!--
+<div style="font-size: 500%"id="count" ><div>6-Sided</div></div> 
+
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #7F7F7F; color: white; font-size: 1000%;border:solid lightgray 10px" 
+	type="button" onclick="d6()">
+ <div id="dice6"></div>
+ </button>
+ </div>
+ padding-left: 50px
+ 
+<div style="font-size: 500%">
+[<div id="dice6"></div>]&nbsp
+<div id="hist6"></div> 
+</div> 
+<img src="D6dice.svg" width="300" height="300" 
+		onclick="d6()">
+-->
+<div style="font-size: 200%">
+Six Sided Dice
+</div>
+
+<input type="image" src="D6dice.svg" width="300" height="300" 
+		onclick="d6()">
+
+<div style="font-size: 500%">
+[<div id="dice6"></div>]&nbsp
+<div id="hist6"></div> 
+</div> 
+<hr>
+
+<!-- DICE 8 -->
+<script>
+function d8(){
+	var hist8 = document.getElementById("hist8");
+	var dice8 = document.getElementById("dice8");
+	var diceRoll = 0;
+	
+	if(a8History.length > HISTORY_LIMIT){
+		a8History.pop();
+	}	
+	hist8.innerHTML = a8History.slice(0,a8History.length);
+
+	diceRoll=Math.floor(Math.random()*8)+1;
+	a8History.unshift(" "+diceRoll.toString());
+	dice8.innerHTML = diceRoll.toString();
+	
+	//console.log(a8History);
+}//endfun
+</script>
+<!--
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #3DA8F4; color: lightgrey; font-size: 1000%;border:solid lightgrey 10px" 
+	type="button" onclick="d8()">
+<div id="dice8"></div> 
+</button>
+
+<img src="D8dice.svg" width="300" height="300" style="padding-left: 50px" onclick="d8()">
+</div>
+
+<div style="font-size: 400%">
+[
+<div id="hist8"></div> 
+]
+</div>
+
+
+<div style="font-size: 500%"id="count" ><div>8-Sided</div></div> 
+<div>
+<button style="background-color: #0b3d97; color: lightgrey; font-size: 1000%; border:solid lightgrey 10px;" 
+	type="button" onclick="d8()">
+<div id="dice8"></div> 
+</button>
+</div>
+<div style="font-size: 400%">
+[
+<div id="hist8"></div> 
+]
+</div> 
+
+-->
+<div style="font-size: 200%">
+Eight Sided Dice
+</div>
+
+<input type="image" src="D8dice.svg" width="300" height="300" 
+		onclick="d8()">
+
+<div style="font-size: 500%">
+[<div id="dice8"></div>]&nbsp
+<div id="hist8"></div> 
+</div> 
+
+<hr>
+
+<!-- DICE 12 -->
+<script>
+function d12(){
+	var hist12 = document.getElementById("hist12");
+	var dice12 = document.getElementById("dice12");
+	var diceRoll = 0;
+	
+	if(a12History.length > HISTORY_LIMIT){
+		a12History.pop();
+	}	
+	hist12.innerHTML = a12History.slice(0,a12History.length);
+
+	diceRoll=Math.floor(Math.random()*12)+1;
+	a12History.unshift(" "+diceRoll.toString());
+	dice12.innerHTML = diceRoll.toString();
+	
+	//console.log(a12History);
+}//endfun
+</script>
+<!--
+<div style="font-size: 500%"id="count" ><div>12-Sided</div></div> 
+
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #004C28; color: lightgrey; font-size: 1000%;border:solid lightgrey 10px" 
+	type="button" onclick="d12()">
+<div id="dice12"></div> 
+</button>
+
+<img src="D12dice.svg" width="300" height="300" style="padding-left: 50px" onclick="d12()">
+</div>
+
+<div style="font-size: 400%">
+[
+<div id="hist12"></div> 
+]
+</div>
+-->
+<div style="font-size: 200%">
+Twelve Sided Dice
+</div>
+
+<input type="image" src="D12dice.svg" width="300" height="300" 
+		onclick="d12()">
+
+<div style="font-size: 500%">
+[<div id="dice12"></div>]&nbsp
+<div id="hist12"></div> 
+</div> 
+
+<hr>
+
+<!-- DICE 20 -->
+<script>
+function d20(){
+	var hist20 = document.getElementById("hist20");
+	var dice20 = document.getElementById("dice20");
+	var diceRoll = 0;
+	
+	if(a20History.length > HISTORY_LIMIT){
+		a20History.pop();
+	}	
+	hist20.innerHTML = a20History.slice(0,a20History.length);
+
+	diceRoll=Math.floor(Math.random()*20)+1;
+	a20History.unshift(" "+diceRoll.toString());
+	dice20.innerHTML = diceRoll.toString();
+	
+	//console.log(a20History);
+}//endfun
+</script>
+<!--
+<div style="font-size: 500%"id="count"><div>20-Sided</div></div> 
+
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #B21419; color: lightgrey; font-size: 1000%;border:solid lightgrey 10px" 
+	type="button" onclick="d20()">
+<div id="dice20"></div> 
+</button>
+
+<img src="D20dice.svg" width="300" height="300" style="padding-left: 50px" onclick="d20()">
+
+</div>
+
+
+<div style="font-size: 400%">
+[
+<div id="hist20"></div> 
+]
+</div> 
+-->
+<div style="font-size: 200%">
+Twenty Sided Dice
+</div>
+
+<input type="image" src="D20dice.svg" width="300" height="300" 
+		onclick="d20()">
+
+<div style="font-size: 500%">
+[<div id="dice20"></div>]&nbsp
+<div id="hist20"></div> 
+</div> 
+<hr>
+
+<!-- DICE 100 -->
+<script>
+function d100(){
+	var hist100 = document.getElementById("hist100");
+	var dice100 = document.getElementById("dice100");
+	var diceRoll1 = 0;
+	var diceRoll10 = 0;
+	
+	if(a100History.length > HISTORY_LIMIT100){
+		a100History.pop();
+	}
+
+	hist100.innerHTML = a100History.slice(0,a100History.length);
+
+ diceRoll1=Math.floor(Math.random()*10);	diceRoll10=Math.floor(Math.random()*10);
+	//if(diceRoll == 0) diceRoll = "00"
+		if (diceRoll10.toString()+ diceRoll1.toString() == "00"){	
+		a100History.unshift(" " + "100");
+	}else{
+		a100History.unshift(" " + diceRoll10.toString()+ diceRoll1.toString());
+	}
+
+  
+	if (diceRoll10.toString()+ diceRoll1.toString() == "00"){	
+		dice100.innerHTML = "100"; 
+	}else{
+		dice100.innerHTML = diceRoll10.toString()+ diceRoll1.toString();
+	}
+
+	//console.log(a100History);
+}//endfun
+</script>
+<!--
+<div style="font-size: 500%"id="count" ><div>2x10-Sided</div></div> 
+
+
+<div style="padding-top: 50px">
+
+<button style="background-color: #38332D; color: lightgrey; font-size: 1000%;border:solid lightgrey 10px" 
+	type="button" onclick="d100()">
+<div id="dice100"></div> 
+</button>
+
+<img src="D100doubleoh.svg" width="300" height="300" style="padding-left: 50px" onclick="d100()">
+
+</div>
+
+
+<div style="font-size: 400%">
+[
+<span id="hist100"></span> 
+]
+</div> 
+-->
+<div style="font-size: 200%">
+One Hunded Sided Dice
+</div>
+
+<input type="image" src="D100doubleoh.svg" width="300" height="300" 
+		onclick="d100()">
+
+
+<div style="font-size: 500%">
+[<div id="dice100"></div>]&nbsp
+<div id="hist100"></div> 
+</div> 
+
+<hr style="height: 100px">
+
+</body>
+
+</html>
