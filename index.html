@@ -22,10 +22,17 @@ const HISTORY_LIMIT = 1000;
 	    body{
 	      background-color: grey;
 	     }
-  	     hr {
-	    width: 100%; /* Total width of both columns */
-            height: 5px; /* Total height */
-				}
+  		 
+		hr {
+	    	width: 100%; /* width of both columns */
+       	 	height: 5px; 
+		} 
+				
+		.dtype{
+			display: flex;
+			justify-content:right; 
+			font-size: 200%;
+		}
 
         .container {
             display: flex;
@@ -33,14 +40,15 @@ const HISTORY_LIMIT = 1000;
             height: 250px; /* Total height */
 	    align-items: center; /* Center the button vertically */
             justify-content: center; /* Center the button horizontally */
-
-        }
+		}
+	
         .button-column {
             display: flex;
             width: 100%; /* Width of the button column */
             height: 100%; /* Height of the button column */
             
         }
+	
         .list-column {
             width: 100%; /* Width of the list column */
             height: 100%; /* Height of the list column */
@@ -49,12 +57,12 @@ const HISTORY_LIMIT = 1000;
             box-sizing: border-box; /* Include padding in width/height */
             white-space: wrap; /* insert line breaks */
         }
-
-        
-	img {
+		
+		img {
             width: 100%;
             height: 75%;
  	}
+	
 </style>
 
 <title>Hello Dice</title>
@@ -62,7 +70,8 @@ const HISTORY_LIMIT = 1000;
 
 <body>
 
-<div style="font-size: 200%">Hello Dice!</div>
+<div style="font-size: 200%">Hello Dice! <i>(optimized for mobile)</i></div>
+<br>
 <div style="font-size: 200%">Click the coin or dice to randomize various results.</div>
 
 <hr>
@@ -102,21 +111,21 @@ diceRoll=Math.floor(Math.random()*2);
 }//endfun
 </script>
 
-	<div style="font-size: 200%">
-		<b>Coin-flip 50/50</b>
+	<div class="dtype">
+		<b>Coin-flip - D2</b>
 	</div>
 
 <div class="container">
-
-	
-	<div class="button-column"; onclick="d2()">
-			<img src="coinflip.svg"> 
-	</div>
 
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice2" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist2"style="font-size: 150%;"></div>
 	</div>	
+	
+	<div class="button-column"; onclick="d2()">
+			<img src="img/coinflip.svg"> 
+	</div>
+
 </div>
 <hr>
 
@@ -140,21 +149,21 @@ function d4(){
 }//endfun
 </script>
 
-<div style="font-size: 200%">
-		<b>Four-sided Dice</b>
+<div class="dtype">
+		<b>Four-sided Dice: D4</b>
 	</div>
 
 <div class="container">
 
-	
-	<div class="button-column"; onclick="d4()">
-			<img src="D4dice.svg"> 
-	</div>
-
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice4" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist4"style="font-size: 150%;"></div>
-	</div>	
+	</div>
+	
+	<div class="button-column"; onclick="d4()">
+			<img src="img/D4dice.svg"> 
+	</div>
+		
 </div>
  
 
@@ -180,19 +189,21 @@ function d6(){
 }//endfun
 </script>
 
-<div style="font-size: 200%">
-<b>Six-sided Dice</b>
+<div class="dtype">
+	<b>Six-sided Dice: D6</b>
 </div>
 
 <div class="container">
-	<div class="button-column"; onclick="d6()">
-			<img src="D6dice.svg"> 
-	</div>
-
+	
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice6" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist6"style="font-size: 150%;"></div>
 	</div>	
+
+	<div class="button-column"; onclick="d6()">
+			<img src="img/D6dice.svg"> 
+	</div>
+
 </div>
  
 <hr>
@@ -217,19 +228,21 @@ function d8(){
 }//endfun
 </script>
 
-<div style="font-size: 200%">
-<b>Eight-sided Dice</b>
+<div class="dtype">
+	<b>Eight-sided Dice: D8</b>
 </div>
 
 <div class="container">
-	<div class="button-column"; onclick="d8()">
-			<img src="D8dice.svg"> 
-	</div>
 
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice8" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist8"style="font-size: 150%;"></div>
 	</div>	
+
+	<div class="button-column"; onclick="d8()">
+			<img src="img/D8dice.svg"> 
+	</div>
+
 </div>
 <hr>
 
@@ -253,21 +266,22 @@ function d12(){
 }//endfun
 </script>
 
-<div style="font-size: 200%">
-<b>Twelve-sided Dice</b>
+<div class="dtype">
+	<b>Twelve-sided Dice: D12</b>
 </div>
 
 <div class="container">
-	<div class="button-column"; onclick="d12()">
-			<img src="D12dice.svg"> 
-	</div>
 
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice12" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist12"style="font-size: 150%;"></div>
 	</div>	
-</div> 
 
+	<div class="button-column"; onclick="d12()">
+			<img src="img/D12dice.svg"> 
+	</div>
+
+</div> 
 <hr>
 
 <!-- DICE 20 -->
@@ -290,21 +304,22 @@ function d20(){
 }//endfun
 </script>
 
-<div style="font-size: 200%">
-<b>Twenty-sided Dice</b>
+<div class="dtype">
+<b>Twenty-sided Dice: D20</b>
 </div>
 
 <div class="container">
-	<div class="button-column"; onclick="d20()">
-			<img src="D20dice.svg"> 
-	</div>
 
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice20" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist20"style="font-size: 150%;"></div>
 	</div>	
-</div> 
 
+	<div class="button-column"; onclick="d20()">
+			<img src="img/D20dice.svg"> 
+	</div>
+
+</div> 
 <hr>
 
 <!-- DICE 100 -->
@@ -340,21 +355,22 @@ function d100(){
 }//endfun
 </script>
 
-<div style="font-size: 200%">
-<b>Hundred-sided Dice</b>
+<div class="dtype">
+<b>Percentile Dice: D100</b>
 </div>
 
 <div class="container">
-	<div class="button-column"; onclick="d100()">
-			<img src="D100doubleoh.svg"> 
-	</div>
 
 	<div class="list-column">	
 		<div style="font-size: 200%;"><b>[<span id="dice100" >&nbsp</span>]</b>&nbsp</div><br>
 		<div id="hist100"style="font-size: 150%;"></div>
 	</div>	
-</div>  
 
+	<div class="button-column"; onclick="d100()">
+			<img src="img/D100doubleoh.svg"> 
+	</div>
+
+</div>  
 <hr style="height: 100px">
 
 </body>
